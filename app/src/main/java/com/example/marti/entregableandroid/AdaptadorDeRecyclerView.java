@@ -16,14 +16,17 @@ import java.util.List;
  * Created by marti on 10/17/2016.
  */
 
-public class AdaptadorDeRecyclerView extends RecyclerView.Adapter {
+public class AdaptadorDeRecyclerView extends RecyclerView.Adapter{
 
     private List<Receta> listaDeRecetas;
     private Context unContext;
+    private View.OnClickListener listener;
 
     public AdaptadorDeRecyclerView (Context unContext){
         this.unContext = unContext;
         listaDeRecetas = new ArrayList<>();
+
+        listaDeRecetas.add(new Receta("Milanesas a la napolitana0"));
         listaDeRecetas.add(new Receta("Milanesas a la napolitana1"));
         listaDeRecetas.add(new Receta("Milanesas a la napolitana2"));
         listaDeRecetas.add(new Receta("Milanesas a la napolitana3"));
@@ -33,7 +36,6 @@ public class AdaptadorDeRecyclerView extends RecyclerView.Adapter {
         listaDeRecetas.add(new Receta("Milanesas a la napolitana7"));
         listaDeRecetas.add(new Receta("Milanesas a la napolitana8"));
         listaDeRecetas.add(new Receta("Milanesas a la napolitana9"));
-        listaDeRecetas.add(new Receta("Milanesas a la napolitana0"));
         listaDeRecetas.add(new Receta("Milanesas a la napolitana10"));
         listaDeRecetas.add(new Receta("Milanesas a la napolitana11"));
         listaDeRecetas.add(new Receta("Milanesas a la napolitana12"));
@@ -47,10 +49,13 @@ public class AdaptadorDeRecyclerView extends RecyclerView.Adapter {
 
     }
 
+
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = (LayoutInflater)unContext.getSystemService(unContext.LAYOUT_INFLATER_SERVICE);
         View viewDeLaCelda = inflater.inflate(R.layout.layout_celda_receta,parent,false);
+        viewDeLaCelda.setOnClickListener(listener);
         RecetasViewHolder holderDeLaCelda = new RecetasViewHolder(viewDeLaCelda);
 
         return holderDeLaCelda;
@@ -66,6 +71,14 @@ public class AdaptadorDeRecyclerView extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         return listaDeRecetas.size();
+    }
+
+    public void setListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+    public Receta devolverReceta(int posicion){
+        return listaDeRecetas.get(posicion);
     }
 
     private static class RecetasViewHolder extends RecyclerView.ViewHolder{
