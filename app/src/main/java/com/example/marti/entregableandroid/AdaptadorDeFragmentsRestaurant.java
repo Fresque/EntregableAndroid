@@ -11,11 +11,11 @@ import java.util.List;
  * Created by marti on 10/15/2016.
  */
 
-public class AdaptadorDeFragments extends FragmentStatePagerAdapter {
+public class AdaptadorDeFragmentsRestaurant extends FragmentStatePagerAdapter {
 
     List<Fragment> listaDeFragments;
 
-    public AdaptadorDeFragments(FragmentManager fm) {
+    public AdaptadorDeFragmentsRestaurant(FragmentManager fm) {
         super(fm);
         this.listaDeFragments = new ArrayList<Fragment>();
 
@@ -31,7 +31,7 @@ public class AdaptadorDeFragments extends FragmentStatePagerAdapter {
     }
 
     @Override
-    public Fragment getItem(int position) {
+    public Fragment getItem(int position){
         return listaDeFragments.get(position);
     }
 

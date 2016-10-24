@@ -12,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 public class RestaurantViewPagerActivity extends AppCompatActivity {
 
     ViewPager viewPager = null;
-    AdaptadorDeFragments adaptadorDeFragments;
+    AdaptadorDeFragmentsRestaurant adaptadorDeFragmentsRestaurant;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,7 @@ public class RestaurantViewPagerActivity extends AppCompatActivity {
 
         viewPager = (ViewPager)findViewById(R.id.viewPager);
 
-        AdaptadorDeFragments adapter = new AdaptadorDeFragments(getSupportFragmentManager());
+        AdaptadorDeFragmentsRestaurant adapter = new AdaptadorDeFragmentsRestaurant(getSupportFragmentManager());
 
         viewPager.setAdapter(adapter);
     }

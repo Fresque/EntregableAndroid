@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/fragmentImagenReceta"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <TextView
+        android:id="@+id/fragmentNombreReceta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nombre"
+        android:layout_alignBottom="@+id/fragmentImagenReceta"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/fragmentIngredientesReceta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ingredientes"
+        android:layout_below="@+id/fragmentImagenReceta"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/fragmentDescripcionReceta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="descripcion"
+        android:layout_below="@+id/fragmentIngredientesReceta"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>
